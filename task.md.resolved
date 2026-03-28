@@ -1,0 +1,6 @@
+# Gemini API Test Task
+
+- [x] Create a [main.py](file:///c:/Users/Dhanush/OneDrive/Desktop/ai-agent/main.py) script to test the Gemini API connection.
+- [x] Create a [requirements.txt](file:///c:/Users/Dhanush/OneDrive/Desktop/ai-agent/requirements.txt) file with `google-generativeai`.
+- [x] Install Python dependencies.
+- [x] Run the [main.py](file:///c:/Users/Dhanush/OneDrive/Desktop/ai-agent/main.py) script with the provided `$env:GEMINI_API_KEY`.
