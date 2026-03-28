@@ -32,6 +32,9 @@ def summarize():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+import os
+
 if __name__ == "__main__":
-    print("Starting Flask server on port 8080...")
-    app.run(host="127.0.0.1", port=8080, debug=True)
+    port = int(os.environ.get("PORT", 10000))
+    print(f"Starting server on port {port}...")
+    app.run(host="0.0.0.0", port=port)
