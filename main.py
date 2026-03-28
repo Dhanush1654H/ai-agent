@@ -7,12 +7,11 @@ app = Flask(__name__)
 # Configure API
 api_key = os.getenv("GEMINI_API_KEY")
 if not api_key:
-    # Just in case it's not set
-    print("Warning: GEMINI_API_KEY environment variable not set.")
+    raise ValueError("GEMINI_API_KEY is not set!")
+
 genai.configure(api_key=api_key)
 
-# Using gemini-2.5-flash as we determined earlier it works with this API key
-model = genai.GenerativeModel("gemini-2.5-flash")
+model = genai.GenerativeModel("gemini-pro")
 
 @app.route("/")
 def home():
@@ -31,6 +30,7 @@ def summarize():
         return jsonify({"summary": response.text})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 import os
 
